@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="it" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/public/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&amp;display=swap" rel="stylesheet">
+    <title>{% block title %}{% endblock %} - MeteoGargano</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-secondary">
+        <div class="container">
+            <img src="/public/logo.svg" class="navbar-brand" height="45px">
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mtgnav" aria-controls="mtgnav" aria-expanded="false" aria-label="Espandi barra">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse" id="mtgnav">
+                <ul class="navbar-nav w-100 justify-content-end mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog/">Blog</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Progetto</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/progetto/">Descrizione del progetto</a></li>
+                            <li><a class="dropdown-item" href="/installazioni/">Le nostre installazioni</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/meteo/">Rete meteo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/webcam/">Webcam</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Associazione</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/associazione/">Iscrizioni, donazione e altre informazioni</a></li>
+                            <li><a class="dropdown-item" href="/statuto/">Statuto</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/previsioni/">Previsioni</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="py-5 text-body-secondary bg-body-tertiary">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col col-auto mr-20">
+                        <img src="/public/logo.svg" class="navbar-brand" height="25px"><br>
+                        <span>
+                            Associazione senza scopo di lucro <br> per lo studio del clima del Gargano
+                        </span>
+                    </div>
+
+                    <div class="col w-100"></div>
+
+                    <div class="col col-auto mr-20">
+                        <h5 class="mb-1">Contatti</h5>
+                        <i class="bi-envelope"></i> <b>Email: </b> <span>info@meteogargano.org</span> <br>
+                        <i class="bi-globe"></i> <b>Sito: </b> <span>meteogargano.org</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="text-body-tertiary bg-body-secondary">
+            <div class="container footer-padding">
+                <div class="row">
+                    <div class="col col-auto align-items-center flex">
+                        <span>&copy; Copyright 2008 - {{ current_year }} Associazione Meteogargano |
+                            Codice Fiscale: 92061760713</span>
+                    </div>
+                    <div class="col w-100"></div>
+                    <div class="col col-auto">
+                        <button class="btn btn-secondary social-buttons"><i class="bi-facebook"></i></button>
+                        <button class="btn btn-secondary social-buttons"><i class="bi-twitter"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="scripts">
+        <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+</body>
+</html>
